@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, My Love!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .heart-bounce {
+      animation: bounce 1s infinite;
+    }
+  </style>
+</head>
+<body class="bg-pink-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full text-center">
+    <h1 class="text-4xl font-bold text-pink-600 mb-4">Happy Birthday, My Love!</h1>
+    <div class="text-6xl heart-bounce text-red-500 mb-4">❤️</div>
+    <p class="text-lg text-gray-700 mb-6">
+      To my sweet innocent girl, <br>
+      I never took my birthday seriously, but i will take yours. 
+      This day is special for me as much as it is for you. 
+      Whenever you find yourself alone, just close your eyes and you will find me there. <br>
+      Love you Infinite. 💕
+    </p>
+    <p class="text-xl font-semibold text-pink-600">Wishing you a very happy birthday</p>
+    <button 
+      onclick="launchConfetti()" 
+      class="mt-6 bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition"
+    >
+      Click This Babe
+    </button>
+  </div>
+
+  <script>
+    function launchConfetti() {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#ff69b4', '#ff1493', '#fff', '#ffd700']
+      });
+    }
+    window.onload = () => {
+      launchConfetti();
+      setInterval(launchConfetti, 5000);
+    };
+  </script>
+</body>
+</html>
